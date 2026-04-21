@@ -101,7 +101,7 @@ export default function RevealPage() {
       <StartScreen
         guestName={event?.guest_name || ''}
         memoriesCount={memories.length}
-        participantsCount={[...new Set(memories.map(m => m.participant_name))].length}
+        participantsCount={Array.from(new Set(memories.map(m => m.participant_name))).length}
         onStart={beginReveal}
       />
     );
