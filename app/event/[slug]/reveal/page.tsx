@@ -336,7 +336,7 @@ function GalleryReveal({
 }) {
   const photos = memories.filter(m => m.type === 'photo');
   const videos = memories.filter(m => m.type === 'video');
-  const contributors = [...new Set(memories.map(m => m.participant_name))];
+  const contributors = Array.from(new Set(memories.map(m => m.participant_name)));
 
   return (
     <div className="px-5 safe-top pt-8 pb-24">
